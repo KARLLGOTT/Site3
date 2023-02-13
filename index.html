@@ -14,8 +14,8 @@
 <body>
     <header>
         <div class="bg">
-            <nav class="cont">
-                <img class="logo " src="img/Ресурс 1 1.png" alt="logo" />
+            <nav class="cont hidden">
+                <img class="logo" src="img/Ресурс 1 1.png" alt="logo" />
                 <a class="link" href="#L1">О НАС</a>
                 <a class="link" href="#">УСЛУГИ И ЦЕНЫ</a>
                 <a class="link" href="#L2">ФОТОАЛЬБОМ</a>
@@ -26,6 +26,26 @@
                     <p class="partel">Ежедневно 9:00 – 22:00</p>
                 </div>
             </nav>
+            <div class="hidden2">
+                <img class="logo" src="img/Ресурс 1 1.png" alt="logo" />
+                <div class="burger-menu-hidden2"></div>
+                <input id="menu-toggle" type="checkbox" />
+                <label class="menu-btn" for="menu-toggle">
+                    <div class="burger-menu">Меню</div>
+                    <span></span>
+                </label>
+                <ul class="menubox">
+                    <li><a class="menu-item" href="#">О НАС</a></li>
+                    <li><a class="menu-item" href="#">УСЛУГИ И ЦЕНЫ</a></li>
+                    <li><a class="menu-item" href="#">ФОТОАЛЬБОМ</a></li>
+                    <li><a class="menu-item" href="#">КОНТАКТЫ</a></li>
+                </ul>
+                <div class="tel">
+                    <img src="img/Vector.png" alt="telephone">
+                    <a class="link linktel" href="#">+3 (000) 000-00-00</a>
+                    <p class="partel">Ежедневно 9:00 – 22:00</p>
+                </div>
+            </div>
             <div class="all">
                 Окунитесь в мир лошадей вместе с нами
                 <div class="allsm">
@@ -34,7 +54,8 @@
                             Доброполье</strong>
                     </p>
                     <div>
-                        <a href="#"><button type="button" id="toggle" class="btn btn-warning but"> <img class="ellipse1" src="img/Ellipse 1.png" alt="ellipce">
+                        <a href="#"><button type="button" id="toggle" class="btn btn-warning but"> <img class="ellipse1"
+                                    src="img/Ellipse 1.png" alt="ellipce">
                                 ЗАПИСАТЬСЯ
                             </button>
                         </a>
@@ -55,13 +76,13 @@
             <h2 class="htext">
                 1100+
             </h2>
-            <p>
-                Довольный посетителей<br />за последний год
+            <p class="ptext">
+                Довольных посетителей<br />за последний год
             </p>
             <h2 class="htext">
                 20+
             </h2>
-            <p>
+            <p class="ptext">
                 Выпущенных профессиональных<br />спортсменов за 1 год
             </p>
         </div>
@@ -69,13 +90,13 @@
             <h2 class="htext">
                 50+
             </h2>
-            <p>
+            <p class="ptext">
                 Проведенных мероприятий<br />за 6 месяцев
             </p>
             <h2 class="htext">
                 15+
             </h2>
-            <p>
+            <p class="ptext">
                 Регулярный занятий<br />в неделю с профессиональными наставниками
             </p>
         </div>
@@ -92,7 +113,7 @@
             Почему нас выбирают
         </div>
         <div class="map">
-            <div class="card mapcard">
+            <div class="card mapcard media-mapcard media-mapcard2">
                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                     <img src="img/карта 1.png" class="img-fluid mapimg" />
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -106,9 +127,9 @@
                     </p>
                 </div>
             </div>
-            <div class="card mapcard">
+            <div class="card mapcard media-mapcard media-mapcard2">
                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                    <img src="img/image 4.png" class="img-fluid mapimg"/>
+                    <img src="img/image 4.png" class="img-fluid mapimg" />
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                 </div>
                 <div class="card-body">
@@ -120,7 +141,7 @@
                     </p>
                 </div>
             </div>
-            <div class="card mapcard">
+            <div class="card mapcard media-mapcard2">
                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                     <img src="img/Секундомер 1.png" class="img-fluid mapimg" />
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -172,7 +193,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="card fotocard fotocard1">
+                <div class="card fotocard centre-fotocard">
                     <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                         <img src="img/unsplash_9h_bJdGqzCk (1).png" class="img-fluid fotoimg" />
                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -204,6 +225,8 @@
                         </p>
                     </div>
                 </div>
+            </div>
+            <div class="foto">
                 <div class="card fotocard">
                     <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                         <img src="img/unsplash_xFhOYE1Xk6M.png" class="img-fluid fotoimg" />
@@ -268,7 +291,8 @@
             <img class="fog" src="img/Облака 1.png" alt="fog">
         </div>
         <div>
-            <a href="#"><button type="button" id="toggle" class="btn btn-warning but but2"><img class="ellipce2" src="img/Ellipse 1.png" alt="ellipce">
+            <a href="#"><button type="button" id="toggle" class="btn btn-warning but but2"><img class="ellipce2"
+                        src="img/Ellipse 1.png" alt="ellipce">
                     ЗАПИСАТЬСЯ
                 </button>
             </a>
@@ -463,7 +487,8 @@
                     </div>
 
                     <!-- Submit button -->
-                    <a href="#"><button type="button" id="toggle" class="btn btn-warning but but4"><img class="ellipce3" src="img/Ellipse 1.png" alt="ellipce">
+                    <a href="#"><button type="button" id="toggle" class="btn btn-warning but but4"><img class="ellipce3"
+                                src="img/Ellipse 1.png" alt="ellipce">
                             ЗАДАТЬ ВОПРОС
                         </button>
                     </a>

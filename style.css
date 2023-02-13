@@ -8,8 +8,8 @@ body {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     background-image: url(img/фон\ 1.png);
     background-size: 100% 100%;
     min-height: 100vh;
@@ -20,11 +20,11 @@ body {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     height: auto;
 }
 
@@ -36,7 +36,7 @@ body {
     color: #202020;
     font-size: 13px;
     line-height: 15px;
-    text-decoration: none;
+    text-decoration: none !important;
     padding-left: 70px;
     padding-top: 20px;
 }
@@ -63,7 +63,112 @@ body {
     color: #202020;
     text-decoration: underline;
     -webkit-text-decoration-color: #008139;
-            text-decoration-color: #008139;
+    text-decoration-color: #008139;
+}
+
+.burger-menu-hidden2 {
+    border: 1px solid #008139;
+    width: 85px;
+    height: 25px;
+    margin-left: 20%;
+    margin-top: -24px;
+}
+
+.menu-btn {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 80%;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 2;
+    padding-top: 22px;
+    padding-left: 34px;
+}
+
+.burger-menu {
+    padding-left: 40px;
+    font-size: 15px;
+}
+
+.menu-btn>span,
+.menu-btn>span::before,
+.menu-btn>span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #008139;
+    transition-duration: .25s;
+}
+
+.menu-btn>span::before {
+    content: '';
+    top: -8px;
+}
+
+.menu-btn>span::after {
+    content: '';
+    top: 8px;
+}
+
+.menubox {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 230px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    z-index: 1;
+    background-color: #202020;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    transition-duration: .25s;
+    border-right: 2px solid #008139;
+}
+
+.menu-item {
+    display: block;
+    padding: 12px 24px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: .25s;
+}
+
+.menu-item:hover {
+    background-color: #fff;
+}
+
+#menu-toggle {
+    opacity: 0;
+}
+
+#menu-toggle:checked~.menu-btn>span {
+    transform: rotate(45deg);
+}
+
+#menu-toggle:checked~.menu-btn>span::before {
+    top: 0;
+    transform: rotate(0);
+}
+
+#menu-toggle:checked~.menu-btn>span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu-toggle:checked~.menubox {
+    visibility: visible;
+    left: 0;
 }
 
 .all {
@@ -86,16 +191,17 @@ body {
     padding-top: 30px;
 }
 
+
 .but {
     width: 218px;
     height: 60px;
     font-size: 13px !important;
     margin-top: 37px;
     -webkit-box-shadow: 0 5px 0 0 #6A5300;
-            box-shadow: 0 5px 0 0 #6A5300;
-            -webkit-transform: translate(-50%, 0);
-                -ms-transform: translate(-50%, 0);
-                    transform: translate(0%, 0);
+    box-shadow: 0 5px 0 0 #6A5300;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(0%, 0);
 }
 
 .ellipse1 {
@@ -137,8 +243,8 @@ body {
 }
 
 .ptext {
-    font-size: 13px;
-    line-height: 15px;
+    font-size: 15px;
+    line-height: 25px;
     color: #202020;
 }
 
@@ -161,10 +267,38 @@ body {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .mapcard {
+        flex: 1 1 50%;
+    }
+
+    .map {
+        flex-wrap: wrap;
+    }
+
+    .media-mapcard {
+        margin-bottom: 46px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .mapcard {
+        flex: 1 90%;
+    }
+
+    .map {
+        flex-wrap: wrap;
+    }
+
+    .media-mapcard2 {
+        margin-bottom: 60px;
+    }
 }
 
 .mapcard {
@@ -172,8 +306,8 @@ body {
     width: auto;
     border: none !important;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .maph {
@@ -208,23 +342,26 @@ body {
     margin-left: auto;
     margin-right: auto;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     width: auto;
-    height: 679px;
 }
 
 .fotocard {
     width: 300px;
     height: 300px;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     margin-top: 84px;
+}
+
+.centre-fotocard {
+    margin-right: 0px !important;
 }
 
 .fotocard1 {
@@ -257,7 +394,7 @@ body {
 
 .lawn {
     width: 100%;
-    margin-top: -758px;
+    margin-top: -1015px;
     position: relative;
 }
 
@@ -276,7 +413,7 @@ body {
 
 .fog {
     width: 100%;
-    margin-top: -182px;
+    margin-top: -147px;
     position: relative;
 }
 
@@ -296,8 +433,8 @@ body {
     position: relative;
     left: 50%;
     -webkit-transform: translate(-50%, 0);
-        -ms-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
     margin-top: -650px;
 }
 
@@ -334,13 +471,13 @@ body {
     display: flex !important;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     width: 200px;
     margin: auto;
     margin-top: 81px;
@@ -396,14 +533,14 @@ body {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -ms-flex-wrap: rap;
-        flex-wrap: rap;
+    flex-wrap: rap;
     margin-left: 20px;
     margin-right: 20px;
     width: 100%;
@@ -446,7 +583,7 @@ body {
     width: 100%;
     height: 801px;
     position: absolute;
-    margin-top: 115px;
+    margin-top: 219px;
 }
 
 .girl-wit-horse {
@@ -466,12 +603,12 @@ body {
 }
 
 .border-form {
-   padding: 60px 62px 60px 60px;
+    padding: 60px 62px 60px 60px;
 }
 
 .clouds {
     position: relative;
-    margin-top: -138px;
+    margin-top: -205px;
     width: 100%;
 }
 
@@ -479,7 +616,7 @@ body {
     position: relative;
     width: 20%;
     margin-left: 80%;
-    margin-top: -216px;
+    margin-top: -211px;
 }
 
 .answer {
@@ -516,12 +653,12 @@ body {
 .but4 {
     width: 330px;
     -webkit-transform: translate(-50%, 0);
-        -ms-transform: translate(-50%, 0);
-            transform: translate(0%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(0%, 0);
     height: 61px;
     margin-top: -3px;
     font-size: 15px;
-    
+
 }
 
 .ellipce3 {
@@ -563,7 +700,7 @@ body {
     padding-left: 30px;
 }
 
-.more{
+.more {
     margin-left: 36%;
     margin-top: 25px;
 }
@@ -579,8 +716,8 @@ body {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     padding-top: 46px;
 }
 
@@ -603,22 +740,22 @@ body {
 }
 
 .bg-map {
-    position:relative;
+    position: relative;
     height: 650px;
     min-width: 190vh;
-    margin-top: 110px; 
+    margin-top: 110px;
     background-image: url(img/bg.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 .logo-map {
- margin-top: -33%;
- padding-left: 146%;
+    margin-top: -33%;
+    padding-left: 167%;
 }
 
 .card-contacts-map {
-    position:absolute;
+    position: absolute;
     padding-top: 33px;
 }
 
@@ -629,10 +766,10 @@ body {
     height: 500px;
 }
 
-.club6 { 
+.club6 {
     text-align: left;
     margin-left: 90px;
-    color:#000000;
+    color: #000000;
 }
 
 .line-map {
@@ -643,7 +780,6 @@ body {
 .pin-map1 {
     margin-top: 25px;
     margin-left: 90px;
-    
 }
 
 .img-pin-map1 {
@@ -687,18 +823,18 @@ body {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .logo1-1 {
-padding-top: 20px;
-padding-left: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
 }
 
-.logo1-2{
-padding-top: 20px;
-padding-right: 10%;
+.logo1-2 {
+    padding-top: 20px;
+    padding-right: 28%;
 }
 
 .link2 {
@@ -722,13 +858,13 @@ padding-right: 10%;
 }
 
 .but5 {
-    background-color:#0B0B0B !important;
+    background-color: #0B0B0B !important;
     color: #EAEAEA !important;
     width: 201px;
     height: 46px;
     font-size: 15px !important;
     -webkit-box-shadow: none;
-            box-shadow: none;
+    box-shadow: none;
 }
 
 .main-last-foot {
@@ -747,10 +883,276 @@ padding-right: 10%;
     color: #fff;
 }
 
+@media (min-width: 768px) and (max-width: 1200px) {
+    .logo {
+        padding-right: 80px;
+        width: 140px;
+        height: 38px;
+        margin-left: 10px;
+        padding-top: 8px;
+    }
 
+    .link {
+        font-size: 11px;
+        line-height: 13px;
+        text-decoration: none;
+        padding-left: 40px;
+        padding-top: 13px;
+    }
 
+    .tel {
+        padding-top: 27px;
+        padding-left: 41px;
+        margin-right: 10px;
+    }
 
+    .linktel {
+        font-size: 14px;
+        font-weight: bolder;
+        padding-left: 5px;
+    }
 
+    .partel {
+        font-size: 11px;
+        line-height: 13px;
+        color: #7D808A;
+        font-weight: normal;
+        margin: 0;
+        padding-left: 27px;
+    }
+}
 
+@media (min-width: 480px) and (max-width: 768px) {
+    .tel {
+        margin-top: -85px;
+        padding-left: 335px;
+        margin-right: 5px;
+    }
 
+    .linktel {
+        font-size: 11px;
+        font-weight: bolder;
+        padding-left: 5px;
+    }
 
+    .partel {
+        font-size: 9px;
+        line-height: 10px;
+        color: #7D808A;
+        font-weight: normal;
+        margin: 0;
+        padding-left: 27px;
+    }
+
+    .all {
+        font-size: 33px;
+        line-height: 37px;
+        width: 480px;
+        height: 74px;
+        text-align: center;
+    }
+
+    .allsm {
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+    }
+
+    .but {
+        width: 180px;
+        height: 45px;
+        font-size: 10px;
+    }
+
+    .club {
+        margin-top: 128px;
+    }
+
+    .jump {
+        display: none;
+    }
+
+    .visiter {
+        padding-top: 40px;
+        padding-right: 23px;
+        margin-left: 27%;
+    }
+
+    .htext {
+        font-size: 27px;
+    }
+
+    .ptext {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .visit {
+        padding-top: 39px;
+    }
+
+    .foto {
+        display: inline-block !important;
+        margin: 0 5% 0 5% !important;
+    }
+
+    .fotocard {
+        width: 230px;
+        height: 290px;
+        margin-top: 84px !important;
+    }
+
+    .fotocard1 {
+        margin-top: 102px !important;
+    }
+
+    .lawn {
+        margin-top: -455px !important;
+    }
+
+    .fog {
+        margin-top: -142px !important;
+    }
+
+    .girl {
+        margin-top: -302px !important;
+    }
+
+    .boy {
+        margin-top: -244px !important;
+    }
+
+    .sky {
+        margin-top: px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .tel {
+        display: none;
+    }
+
+    .burger-menu-hidden2 {
+        margin-left: 70%;
+    }
+
+    .menu-btn {
+        right: 30% !important;
+    }
+
+    .all {
+        font-size: 24px;
+        line-height: 27px;
+        width: 320px;
+        height: 54px;
+        text-align: center;
+    }
+
+    .allsm {
+        font-size: 13px;
+        line-height: 18px;
+        text-align: center;
+    }
+
+    .menubox {
+        width: 100%;
+    }
+
+    .but {
+        width: 170px;
+        height: 43px;
+        font-size: 10px;
+    }
+
+    .htext {
+        text-align: center;
+    }
+
+    .ptext {
+        text-align: center;
+    }
+
+    .club {
+        margin-top: 150px;
+    }
+
+    .jump {
+        display: none;
+    }
+
+    .visiter {
+        margin-left: 30%;
+    }
+
+    .visit {
+        margin-left: 2%;
+    }
+
+    .lawn {
+        margin-top: -25px !important;
+    }
+
+    .fog {
+        margin-top: -103px !important;
+    }
+
+    .girl {
+        margin-top: -120px !important;
+        width: 12% !important;
+    }
+
+    .boy {
+        margin-top: -100px !important;
+        width: 12% !important;
+    }
+
+    .sky {
+        margin-top: 2103px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+    .logo {
+        width: 89px;
+        height: 35px;
+        padding-right: 28px;
+        margin-left: 10px;
+        padding-top: 14px;
+    }
+
+    .hidden {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1900px) {
+    .hidden2 {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 768px) {
+    .club {
+        margin-top: 128px;
+    }
+
+    .jump {
+        width: 391px !important;
+        height: 264px !important;
+        margin-left: -90px;
+        margin-top: 45px;
+    }
+
+    .visiter {
+        padding-right: 14px !important;
+    }
+
+    .ptext {
+        font-size: 13px;
+        line-height: 22px;
+    }
+
+    .visit {
+        padding-top: 35px;
+    }
+}
